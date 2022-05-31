@@ -12,22 +12,41 @@
       <h1>Form Validator</h1>
       <form id="form" class="form">
         <div id="form-control" class="form-control">
-          <label for="username">Username</label>
+          <label for="username"
+            >Username
+            <i
+              style="visibility: hidden"
+              id="icon"
+              class="fa-solid fa-check"
+            ></i
+          ></label>
+
           <input type="text" id="username" placeholder="Enter username" />
           <small id="error">Error Message</small>
         </div>
         <div id="form-control" class="form-control">
-          <label for="email">Email</label>
+          <label for="email"
+            >Email <i style="visibility: hidden" class="fa-solid fa-check"></i
+          ></label>
+
           <input type="text" id="email" placeholder="Enter email" />
           <small id="error">Error Message</small>
         </div>
         <div id="form-control" class="form-control">
-          <label for="password">Password</label>
+          <label for="password"
+            >Password
+            <i style="visibility: hidden" class="fa-solid fa-check"></i
+          ></label>
+
           <input type="password" id="password" placeholder="Enter password" />
           <small id="error">Error Message</small>
         </div>
         <div id="form-control" class="form-control">
-          <label for="password2">Confirm Password</label>
+          <label for="password2"
+            >Confirm Password
+            <i style="visibility: hidden" class="fa-solid fa-check"></i
+          ></label>
+
           <input
             type="password"
             id="password2"
@@ -38,6 +57,10 @@
         <button type="submit">Submit</button>
       </form>
     </div>
+    <script
+      src="https://kit.fontawesome.com/0f865085ad.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="script.js"></script>
   </body>
 </html>
