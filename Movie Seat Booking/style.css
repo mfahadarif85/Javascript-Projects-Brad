@@ -16,6 +16,23 @@ body {
   font-family: "Lato", sans-serif;
 }
 
+.movie-container {
+  margin: 20px 0;
+}
+
+.movie-container select {
+  background-color: #fff;
+  border: 0;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-left: 10px;
+  padding: 5px 15px 5px 15px;
+}
+
+.container {
+  perspective: 1000px;
+  margin-bottom: 30px;
+}
 .seat {
   height: 12px;
   width: 14px;
@@ -72,4 +89,21 @@ body {
 }
 .row {
   display: flex;
+}
+
+.screen {
+  height: 70px;
+  width: 100%;
+  background-color: white;
+  margin: 15px 0;
+  box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
+  transform: rotateX(-45deg);
+}
+
+p.text {
+  margin: 5px 0;
+}
+
+p.text span {
+  color: #6feaf6;
 }
