@@ -4,7 +4,7 @@ const wrongLettersEl = document.getElementById("wrong-letters");
 const finalMsgEl = document.getElementById("final-message");
 const playBtn = document.getElementById("play-button");
 const notificationEl = document.getElementById("notification-container");
-const figurePartsEl = document.querySelectorAll("figure-part");
+const figurePartsEl = document.querySelectorAll(".figure-part");
 
 const wordsArr = [
   "apple",
@@ -19,7 +19,8 @@ const wordsArr = [
   "jelly",
   "kite",
 ];
-const selectedWord = wordsArr[Math.floor(Math.random() * wordsArr.length)];
+
+let selectedWord = wordsArr[Math.floor(Math.random() * wordsArr.length)];
 
 let correctLetters = [];
 let wrongLetters = [];
@@ -53,7 +54,25 @@ function showNotification() {
 
 // update the wrong letters element
 function updateWrongLettersEl() {
-  console.log("update wrong letters element");
+  //Display wrong letters
+  wrongLettersEl.innerHTML = `
+  ${wrongLetters.length > 0 ? "<p>Wrong Letters</p>" : ""}
+  ${wrongLetters.map((letter) => `<span>${letter}</span>`)}
+  `;
+  //Display Hangman Parts
+  figurePartsEl.forEach((part, index) => {
+    const errors = wrongLetters.length;
+    if (index < errors) {
+      part.style.display = "block";
+    } else {
+      part.style.display = "none";
+    }
+  });
+  //check if lost
+  if (wrongLetters.length === figurePartsEl.length) {
+    finalMsgEl.innerText = "Sorry, You Loose!";
+    popupEl.style.display = "flex";
+  }
 }
 
 // key down event listener
@@ -76,6 +95,19 @@ window.addEventListener("keydown", (e) => {
       }
     }
   }
+});
+
+//Restart Game and Play Again
+playBtn.addEventListener("click", () => {
+  //Empty Arrays
+  correctLetters.splice(0);
+  wrongLetters.splice(0);
+
+  selectedWord = wordsArr[Math.floor(Math.random() * wordsArr.length)];
+
+  displayWord();
+  updateWrongLettersEl();
+  popupEl.style.display = "none";
 });
 
 displayWord();
