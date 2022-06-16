@@ -1,11 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: "Lato", sans-serif;
   background-image: linear-gradient(
     0deg,
     rgba(247, 247, 247, 1) 23.8%,
@@ -16,11 +15,12 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-family: "Lato", sans-serif;
   margin: 0;
 }
 
 .music-container {
-  background-color: white;
+  background-color: #fff;
   border-radius: 15px;
   box-shadow: 0 20px 20px 0 rgba(252, 169, 169, 0.6);
   display: flex;
@@ -37,7 +37,7 @@ body {
 
 .img-container::after {
   content: "";
-  background-color: white;
+  background-color: #fff;
   border-radius: 50%;
   position: absolute;
   bottom: 100%;
@@ -56,6 +56,7 @@ body {
   bottom: 0;
   left: 0;
   animation: rotate 3s linear infinite;
+
   animation-play-state: paused;
 }
 
@@ -67,6 +68,7 @@ body {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -80,7 +82,7 @@ body {
 }
 
 .action-btn {
-  background-color: white;
+  background-color: #fff;
   border: 0;
   color: #dfdbdf;
   font-size: 20px;
@@ -94,17 +96,21 @@ body {
   font-size: 30px;
 }
 
+.action-btn:focus {
+  outline: 0;
+}
+
 .music-info {
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 15px 15px 0 0;
   position: absolute;
   top: 0;
   left: 20px;
-  width: calc(100% -40px);
+  width: calc(100% - 40px);
   padding: 10px 10px 10px 150px;
   opacity: 0;
   transform: translateY(0%);
-  transition: transform 0.3s ease-in opacity 0.3s ease-in;
+  transition: transform 0.3s ease-in, opacity 0.3s ease-in;
   z-index: 0;
 }
 
@@ -118,7 +124,7 @@ body {
 }
 
 .progress-container {
-  background-color: white;
+  background: #fff;
   border-radius: 5px;
   cursor: pointer;
   margin: 10px 0;
