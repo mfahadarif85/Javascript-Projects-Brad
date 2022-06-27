@@ -6,7 +6,10 @@ const errorText = document.getElementById("errorText");
 
 const apiURL = "https://api.lyrics.ovh";
 
-// Searc by song or artist
+//focus on search when page starts
+search.focus();
+
+// Search by song or artist
 async function searchSongs(term) {
   const res = await fetch(`${apiURL}/suggest/${term}`);
   const data = await res.json();
